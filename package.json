@@ -1,0 +1,18 @@
+{
+  "name": "px-compare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "px-compare": "compare.js"
+  },
+  "author": "Martin Wragg <mdwragg@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "lighthouse": "^1.6.5"
+  }
+}
