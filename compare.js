@@ -4,9 +4,11 @@ const exec = require('child_process').exec;
 const bower = require('bower');
 
 const spawn = require('child_process').spawn;
-
-function launchHeadlessChrome(url, callback) {
-  var poly = spawn('polyserve');
+function launchHeadlessChrome(callback) {
+  let dir = process.cwd();
+  let componentName = dir.substr(dir.lastIndexOf('/')+1);
+  let url = `http://127.0.0.1:8000/components/${componentName}`;
+  var poly = spawn(`polyserve`);
   var Writable = require('stream').Writable;
   var ws = Writable();
 
@@ -24,9 +26,10 @@ function launchHeadlessChrome(url, callback) {
   poly.stdout.pipe(ws);
 }
 
-launchHeadlessChrome('http://127.0.0.1:8000/components/px-slider/', (err, stdout, stderr) => {
+launchHeadlessChrome((err, stdout, stderr) => {
   console.log('chome screenshotting');
 });
+
 
 
 
