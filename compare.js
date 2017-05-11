@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 const exec = require('child_process').exec;
-const bower = require('bower');
 
 const spawn = require('child_process').spawn;
 function launchHeadlessChrome(callback) {
@@ -17,7 +16,7 @@ function launchHeadlessChrome(callback) {
     if(textChunk.includes('reusable components:')){
       console.log('server started');
       const CHROME = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"';
-      exec(`${CHROME} --headless --virtual-time-budget=10000 --window-size=1412,2732 --screenshot --disable-gpu ${url}`, function(){
+      exec(`${CHROME} --headless --virtual-time-budget=5000 --window-size=1412,2732 --screenshot --disable-gpu ${url}`, function(){
         poly.kill();
       });
     }
@@ -28,17 +27,5 @@ function launchHeadlessChrome(callback) {
 
 launchHeadlessChrome((err, stdout, stderr) => {
   console.log('chome screenshotting');
+  console.log(err, stdout, stderr);
 });
-
-
-
-
-// function callBowerInstall(){
-//   bower.commands
-//   .install()
-//   .on('end', function (installed) {
-//     console.log("bower install complete");
-//   });
-// }
-//
-// callBowerInstall();

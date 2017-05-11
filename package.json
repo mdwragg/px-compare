@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "preinstall": "brew install imagemagick && brew install graphicsmagick",
   "bin": {
-    "px-compare": "compare.js"
+    "px-create-snapshot": "compare.js",
+    "px-diff": "diff.js",
+    "px-create-changed": "px-compare.sh",
+    "px-create-originals": "px-create-originals.sh"
   },
   "author": "Martin Wragg <mdwragg@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "bower": "^1.8.0",
-    "lighthouse": "^1.6.5"
+    "gm": "^1.23.0",
+    "yargs": "^8.0.1"
   }
 }
