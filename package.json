@@ -1,6 +1,6 @@
 {
   "name": "px-compare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "compare.js",
   "scripts": {
@@ -10,11 +10,11 @@
   "bin": {
     "px-create-snapshot": "compare.js",
     "px-diff": "diff.js",
-    "px-create-changed": "px-compare.sh",
-    "px-create-originals": "px-create-originals.sh"
+    "px-create-changed": "px-create-changed.sh",
+    "px-create-originals": "px-create-originals.sh",
+    "px-comapre": "px-compare.js",
   },
   "author": "Martin Wragg <mdwragg@gmail.com>",
-  "license": "ISC",
   "dependencies": {
     "gm": "^1.23.0",
     "yargs": "^8.0.1"
