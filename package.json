@@ -8,11 +8,11 @@
   },
   "preinstall": "brew install imagemagick && brew install graphicsmagick",
   "bin": {
-    "px-create-snapshot": "compare.js",
-    "px-diff": "diff.js",
-    "px-create-changed": "px-create-changed.sh",
-    "px-create-originals": "px-create-originals.sh",
-    "px-comapre": "px-compare.js",
+    "px-compare-create-snapshot": "px-screenshot-component.js",
+    "px-compare-create-diffs": "px-create-diffs.js",
+    "px-compare-create-changed": "px-create-changed.sh",
+    "px-compare-create-originals": "px-create-originals.sh",
+    "px-compare": "px-compare.js"
   },
   "author": "Martin Wragg <mdwragg@gmail.com>",
   "dependencies": {

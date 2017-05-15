@@ -8,7 +8,7 @@ const gm = require('gm');
 
 function diffAllTheThings(callback) {
   const controlFolder = path.resolve(process.cwd(), './screenshots/');
-  const folderToDiff = path.resolve(process.cwd(), argv.compareFolder);
+  const folderToDiff = path.resolve(process.cwd(), argv['compare-folder']);
   const diffFolder = path.resolve(process.cwd(), `${folderToDiff.replace('screenshots-', 'diffs-')}`);
   const fs = require('fs');
   fs.readdir(controlFolder, (err, files) => {
