@@ -1,6 +1,10 @@
 #! /usr/bin/env node
 
 const exec = require('child_process').exec;
+const argv = require('yargs').argv;
+
+const timeout = argv.timeout || 5000;
+
 
 const spawn = require('child_process').spawn;
 function launchHeadlessChrome(callback) {
@@ -16,7 +20,7 @@ function launchHeadlessChrome(callback) {
     if(textChunk.includes('reusable components:')){
       console.log('server started');
       const CHROME = '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"';
-      exec(`${CHROME} --headless --virtual-time-budget=5000 --window-size=1412,2732 --screenshot --disable-gpu ${url}`, function(){
+      exec(`${CHROME} --headless --virtual-time-budget=${timeout} --window-size=1412,2732 --screenshot --disable-gpu ${url}`, function(){
         poly.kill();
       });
     }
